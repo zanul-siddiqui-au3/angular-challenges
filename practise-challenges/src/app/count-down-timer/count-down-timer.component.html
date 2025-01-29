@@ -1,0 +1,11 @@
+<div class="container " >
+    <h1>Countdown Timer</h1>
+    <form [formGroup]="counterForm" class="timer-section">
+        <div class="time-section">Hours<input type="number" formControlName="hours"/></div>
+        <div class="time-section">Minutes <input type="number" formControlName="minutes"  /></div>
+        <div class="time-section">Seconds <input type="number" formControlName="seconds" /></div>
+        <button (click)="handleStartTimer()" [hidden]="counterStatus === 'start'" >Start</button>
+        <button #stopBtn [hidden]="counterStatus === 'none' || counterStatus === 'stop'">Stop</button>
+        <button (click)="handleReset()">Reset</button>
+    </form>
+</div>
